@@ -1,4 +1,7 @@
 
+
+
+
 function summarizeGrades(assignments) {
   let sum = 0; //vaule has to be changed when grades are added 
   const count = assignments.length;//assign only once
@@ -33,6 +36,26 @@ const assignments = [
 ];
 console.log(summarizeGrades(assignments)); 
 
+let letterCounter = function (letter, ignoreCapitalization) {
+    return function (word) {
+        let count = 0;
+
+        for (let character of word) {
+            if (ignoreCapitalization) {
+                if (character.toLowerCase() === letter.toLowerCase()) {
+                    count++;
+                }
+            } else {
+                if (character === letter) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    };
+};
+
 function makeCharacter(characterName){
     //private variables protected by the closure
     //farmingSkill and fishingSkill are declared inside makeCharacter() but are not included as properties of the returned object.
@@ -57,7 +80,7 @@ function makeCharacter(characterName){
             return fishingSkill;
         }
 
-        // Other input returns undefined.
+        // Other input returns will be undefined.
     };
 
     return {
