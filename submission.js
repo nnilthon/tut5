@@ -84,8 +84,8 @@ function makeCharacter(characterName){
     };
 
     return {
-        name,
-        levelUp,
-        showSkill
+        name : characterName,
+        levelUp : levelUp,
+        showSkill : showSkill
     }
 }
